@@ -47,8 +47,8 @@ function fuzzyMatch(drivers,letters) {
 let lettersArray=letters.split(""); //["s","a","r"]
 let filteredNames = drivers.filter(function(word) {
 let wordArray=word.split(""); //["s","a","r","a","h"]
-     let result=[]; 
-let ok=0;  
+     let result=[];
+let ok=0;
 for(let i=0;i<=lettersArray.length;i++)
 {        if(wordArray[i]===lettersArray[i])
             {ok++;}
