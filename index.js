@@ -43,17 +43,22 @@ lettersArray=letters.split(""); //["S","a"]
 return filtered;
 }
 */
-function fuzzyMatch(drivers,string){
-  return drivers.filter(name => {
-let result=[];
-let element="";
-    for(let i=0;i<string.length;i++)
-    { if (name.charAt(i)=== string.charAt(i))
-     { element=name;
-console.log(element)}
-   }
-return result.push(element);
-  })
+function fuzzyMatch(drivers,letters) {
+let lettersArray=letters.split(""); //["s","a","r"]
+let filteredNames = drivers.filter(function(word) {
+let wordArray=word.split(""); //["s","a","r","a","h"]
+     let result=[]; 
+let ok=0;  
+for(let i=0;i<=lettersArray.length;i++)
+{        if(wordArray[i]===lettersArray[i])
+            {ok++;}
+}
+if(ok===lettersArray.length)
+{result.push(word)
+console.log(result);
+return result;}
+});
+    return filteredNames;
 }
 function matchName(drivers,string){
 let filtered=drivers.filter(function(element){
